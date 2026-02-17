@@ -20,5 +20,5 @@ from force_org import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.ForceOrgView.as_view(), name='force-org'),
+    path('force-org/', views.ForceOrgView.as_view(), name='force-org'),
 ]
