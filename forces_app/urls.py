@@ -20,5 +20,6 @@ from force_org import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('force-org/', views.ForceOrgView.as_view(), name='force-org'),
+    path('force-org/<int:faction_id>/', views.ForceOrgView.as_view(), name='force-org'),
+    path('factions/', views.FactionsView.as_view(), name='factions'),
 ]

@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import ForceOrg
+from .models import Factions
 
 
 class ForceOrgSerializer(serializers.ModelSerializer):
@@ -10,6 +11,7 @@ class ForceOrgSerializer(serializers.ModelSerializer):
     points_cost = serializers.IntegerField()
     is_built = serializers.BooleanField()
     is_painted = serializers.BooleanField()
+    faction = serializers.CharField(source='faction.faction_name')
 
     class Meta:
         model = ForceOrg
@@ -21,4 +23,16 @@ class ForceOrgSerializer(serializers.ModelSerializer):
             'points_cost',
             'is_built',
             'is_painted',
+            'faction',
+        )
+
+class FactionsSerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField(read_only=True)
+    faction_name = serializers.CharField()
+
+    class Meta:
+        model = Factions
+        fields = (
+            'id',
+            'faction_name',
         )
