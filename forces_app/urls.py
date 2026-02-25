@@ -16,10 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from force_org import views
+from wh_40k import views as wh40k_views
+from wh_old_world import views as old_world_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('force-org/<int:faction_id>/', views.ForceOrgView.as_view(), name='force-org'),
-    path('factions/', views.FactionsView.as_view(), name='factions'),
+    path('wh40k/<int:faction_id>/', wh40k_views.ForceOrgView.as_view(), name='wh40k'),
+    path('wh40k-factions/', wh40k_views.FactionsView.as_view(), name='wh40k-factions'),
+    path('wh-old-world/', old_world_views.OldWorldView.as_view(), name='wh-old-world'),
+    path('owfactions/', old_world_views.OldWorldFactionsView.as_view(), name='owfactions'),
 ]

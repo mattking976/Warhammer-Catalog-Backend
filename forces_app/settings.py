@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'force_org',
+    'wh_40k',
+    'wh_old_world',
 ]
 
 MIDDLEWARE = [
